@@ -20,27 +20,42 @@ Calculator.new
 class Elevator
 
   attr_accessor :floor
-  attr_reader :ud
+  attr_reader :ud, :music
 
   def initialize(floor)
     @floor = floor
+    @ud = false
+    @music = false
   end 
 
 #which floor you are on
+  def cfloor(new_floor)
+      @floor = new_floor
+  end
 
 #up or down
   def updown
       @ud = !@ud
       if @ud
-          puts "going up"
+          "going up"
       else
-          puts "going down"
+          "going down"
       end
   end 
 
 #cheery greeting and current floor
   def greeting
-    puts "Greetings! You are on " + "#{@floor}"
+    "Greetings! You are on " + "#{@floor}"
+  end
+
+#music
+  def music
+    @music = !@music
+    if @music
+      "You are now listening to music"
+    else
+      "You turned off music"
+    end
   end
 
 end
